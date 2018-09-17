@@ -178,18 +178,16 @@
 }
 ```
 
-<h2 id="tocInfoObject">Info Object</h2>
+<h2 id="tocTWAPObject">TWAP Object</h2>
 
-<a id="schemeinfoobject"></a>
+*TWAP object comprises all intervals you have requested where key of the interval is the start unix_time of the interval. Each interval provides info about typical price and TWAP.*
+
+<a id="schemetwapobject"></a>
 
 |Name|Type|Description|
 |---|---|---|
-|valid_pairs|Array of Strings|All asset pairs supported by **ChainRider**.|
-|valid_exchanges|Array of Strings|All exchanges supported by **ChainRider**.|
-|valid_exchange_pairs|JSON|Valid exchanges for all supported pairs.|
-|valid_pairs_on_exchanges|JSON|Valid pairs for all supported exchanges.|
-|valid_intervals_twap|JSON|Valid intervals for a **TWAP** calculation, in minutes.|
-|max_intervals_by_interval|JSON|Maximum number of intervals which can be returned, for a given interval duration.|
+|typical_price|Float|Typical price: (Open + High + Low + Close) / 4|
+|twap|Float|TWAP price: (Sum of Typical Price) / (# of Intervals)|
 
 
 > Example
@@ -197,157 +195,79 @@
 ```json
 {
     "message": {
-        "valid_pairs": [
-            "BTCUSD",
-            "ETHUSD",
-            "ETCUSD",
-            "LTCUSD",
-            "DASHUSD"
-        ],
-        "valid_exchanges": [
-            "Binance",
-            "Bitfinex",
-            "Bitstamp",
-            "Coinbase",
-            "Gemini",
-            "HitBTC",
-            "Huobi",
-            "Kraken",
-            "Kucoin",
-            "Poloniex"
-        ],
-        "valid_exchange_pairs": {
-            "BTCUSD": [
-                "Binance",
-                "Bitfinex",
-                "Bitstamp",
-                "Coinbase",
-                "Gemini",
-                "HitBTC",
-                "Huobi",
-                "Kraken",
-                "Kucoin",
-                "Poloniex"
-            ],
-            "ETHUSD": [
-                "Binance",
-                "Bitfinex",
-                "Bitstamp",
-                "Coinbase",
-                "Gemini",
-                "HitBTC",
-                "Huobi",
-                "Kraken",
-                "Kucoin",
-                "Poloniex"
-            ],
-            "ETCUSD": [
-                "Binance",
-                "Bitfinex",
-                "HitBTC",
-                "Huobi",
-                "Kraken",
-                "Poloniex"
-            ],
-            "LTCUSD": [
-                "Binance",
-                "Bitfinex",
-                "Bitstamp",
-                "Coinbase",
-                "HitBTC",
-                "Huobi",
-                "Kraken",
-                "Kucoin",
-                "Poloniex"
-            ],
-            "DASHUSD": [
-                "Bitfinex",
-                "HitBTC",
-                "Huobi",
-                "Kraken",
-                "Poloniex"
-            ]
+        "1537175340": {
+            "typical_price": 11.09,
+            "twap": 11.09
         },
-        "valid_pairs_on_exchanges": {
-            "Binance": [
-                "BTCUSD",
-                "ETHUSD",
-                "ETCUSD",
-                "LTCUSD"
-            ],
-            "Bitfinex": [
-                "BTCUSD",
-                "ETHUSD",
-                "ETCUSD",
-                "LTCUSD",
-                "DASHUSD"
-            ],
-            "Bitstamp": [
-                "BTCUSD",
-                "ETHUSD",
-                "LTCUSD"
-            ],
-            "Coinbase": [
-                "BTCUSD",
-                "ETHUSD",
-                "ETCUSD",
-                "LTCUSD"
-            ],
-            "Gemini": [
-                "BTCUSD",
-                "ETHUSD"
-            ],
-            "HitBTC": [
-                "BTCUSD",
-                "ETHUSD",
-                "ETCUSD",
-                "LTCUSD",
-                "DASHUSD"
-            ],
-            "Huobi": [
-                "BTCUSD",
-                "ETHUSD",
-                "ETCUSD",
-                "LTCUSD",
-                "DASHUSD"
-            ],
-            "Kraken": [
-                "BTCUSD",
-                "ETHUSD",
-                "ETCUSD",
-                "LTCUSD",
-                "DASHUSD"
-            ],
-            "Kucoin": [
-                "BTCUSD",
-                "ETHUSD",
-                "LTCUSD"
-            ],
-            "Poloniex": [
-                "BTCUSD",
-                "ETHUSD",
-                "ETCUSD",
-                "LTCUSD",
-                "DASHUSD"
-            ]
+        "1537175940": {
+            "typical_price": 11.09,
+            "twap": 11.09
         },
-        "valid_intervals_twap": [
-            1,
-            5,
-            10,
-            15,
-            30,
-            60
-        ],
-        "max_intervals_by_interval": {
-            "1": 720,
-            "5": 144,
-            "10": 72,
-            "15": 48,
-            "30": 24,
-            "60": 12
+        "1537176540": {
+            "typical_price": 11.15,
+            "twap": 11.11
+        },
+        "1537177140": {
+            "typical_price": 11.17,
+            "twap": 11.12
+        },
+        "1537177740": {
+            "typical_price": 11.16,
+            "twap": 11.13
         }
     }
+}
+```
+
+<h2 id="tocInfoObject">Info Object</h2>
+
+<a id="schemeinfoobject"></a>
+
+|Name|Type|Description|
+|---|---|---|
+|pairs|Array of Strings|All asset pairs supported by **ChainRider**.|
+|exchanges|Array of Strings|All exchanges supported by **ChainRider**.|
+|exchange_pairs|JSON|Valid exchanges for all supported pairs.|
+|pairs_exchanges|JSON|Valid pairs for all supported exchanges.|
+|intervals_twap|JSON|Valid intervals for a **TWAP** calculation, in minutes.|
+|max_intervals_twap|JSON|Maximum number of intervals which can be returned, for a given interval duration.|
+
+
+> Example
+
+```json
+{
+  "message": {
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+    "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
+    "exchange_pairs": {
+        "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi",
+         "Kraken", "Poloniex"],
+        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+         "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
+    },
+    "pairs_exchanges": {
+        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
+        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
+        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
+        "Gemini": ["BTCUSD", "ETHUSD"],
+        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+        "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
+        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
+    },
+    "intervals_twap": [1, 5, 10, 15, 30, 60],
+    "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
+     "15": 48, "30": 24, "60": 12}
+  }
 }
 ```
 

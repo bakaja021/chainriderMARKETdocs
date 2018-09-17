@@ -9,13 +9,15 @@ For more information, visit the following <a href="https://en.wikipedia.org/wiki
 
 * `TWAP: (Sum of Typical Price) / (# of Intervals)`
 
+<a id="divider"></a>
+
 ## TWAP Calculation
 
 This calculation will return an array of intervals, each including a time range, typical price for that time range, and the corresponding **TWAP**. Depending on how you structure the call, a different **TWAP** value could be returned for the same time interval, because **TWAP** is directly tied to the **start_unix** provided.
 
 This indicator is **real-time** by nature. Each subsequent call using the same parameters will return the same number of **intervals_required**, but will incorporate new trade data as time goes on while discarding old trade data (*similar to the Moving VWAP calculation*).
 
-<h3 id="postTwapPairRealtime">POST /v1/finance/volume/twap/realtime/ ??? </h3>
+<h3 id="postTwapPairRealtime">POST /v1/finance/twap/realtime/</h3>
 
 <a id="opIdpostTwapPairRealtime"></a>
 
@@ -117,7 +119,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/finance/twap/realtime/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```

@@ -111,7 +111,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/finance/volume/pair/realtime/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -287,7 +287,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/finance/volume/pair/historic/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -461,7 +461,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/finance/volume/exchange/realtime/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -632,7 +632,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/finance/volume/exchange/historic/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```

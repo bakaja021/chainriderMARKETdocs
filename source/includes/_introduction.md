@@ -12,10 +12,10 @@ The initial version of **ChainRider Finance** supports the following data feeds:
 Market Indicator |  Time Frame | Base URL
 -------------    |  --------   | ---------------
 [Volume Weighted Average Price](#volume-weighted-average-price), Moving | Real-Time | `https://api.chainrider.io/v1/finance/vwap/realtime/`
-[Volume Weighted Average Price](#vwap-historic) | Historic  | `https://api.chainrider.io/v1/finance/vwap/historic/`
+[Volume Weighted Average Price](#vwap-historical) | Historic  | `https://api.chainrider.io/v1/finance/vwap/historic/`
 [Time Weighted Average Price](#time-weighted-average-price) | R.T. & Historic | `https://api.chainrider.io/v1/finance/twap/historic/`
-[Exchange Volume](#market-volume) (e.g. Poloniex, Gemini)| R.T. & Historic | `https://api.chainrider.io/v1/finance/volume/exchange/realtime`
-[Pair Volume](#market-volume) (e.g. BTCUSD, ETHUSD)| R.T. & Historic | `https://api.chainrider.io/v1/finance/volume/pair/realtime`
+[Exchange Volume](#exchange-volume-realtime) (e.g. Poloniex, Gemini)| R.T. & Historic | `https://api.chainrider.io/v1/finance/volume/exchange/realtime/`
+[Pair Volume](#asset-volume-realtime) (e.g. BTCUSD, ETHUSD)| R.T. & Historic | `https://api.chainrider.io/v1/finance/volume/pair/realtime/`
 
 For specific inquiries or general help using ChainRider Finance, please contact us at [support@vizlore.com](mailto:ognjen.ikovic@vizlore.com). We are always open to new ideas or suggestions for improving our service.
 
@@ -26,7 +26,7 @@ To upgrade an account to MVP or Production level, please visit our <a href="http
 
 ## Authentication Token
 
-ChainRider requires an authentication token to access API calls. The token is passed as a parameter to all GET and DELETE requests. For all POST and PUT requests, tokens are added in the request body.
+ChainRider requires an authentication token to access API calls. The token is passed in the request header with key name `Chain-Rider` and token as value.
 
 The URL examples throughout this documentation use **`<token>`** as a placeholder. When testing out our examples, substitute **`<token>`** with your unique authentication token.
 
@@ -138,7 +138,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/ratelimit/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```

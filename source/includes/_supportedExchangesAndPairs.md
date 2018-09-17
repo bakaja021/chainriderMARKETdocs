@@ -21,11 +21,13 @@ ChainRider supports the following exchanges:
 * `Kucoin`
 * `Poloniex`
 
+<a id="divider"></a>
+
 ## API Query
 
 View information about ChainRider supported exchanges and asset pairs through the API.
 
-<h3 id="getSupportedParameters">GET /v1/finance/info </h3>
+<h3 id="getSupportedParameters">GET /v1/finance/info/ </h3>
 
 <a id="opIdGetSupportedParameters"></a>
 
@@ -48,7 +50,7 @@ View information about ChainRider supported exchanges and asset pairs through th
 > Code samples
 
 ```shell
-curl -X GET https://api.chainrider.io/v1/finance/info \
+curl -X GET https://api.chainrider.io/v1/finance/info/ \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'Chain-Rider: <TOKEN>'
@@ -56,10 +58,10 @@ curl -X GET https://api.chainrider.io/v1/finance/info \
 # Response example
 {
   "message": {
-    "valid_pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-    "valid_exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
     "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
-    "valid_exchange_pairs": {
+    "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
          "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -70,7 +72,7 @@ curl -X GET https://api.chainrider.io/v1/finance/info \
          "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
     },
-    "valid_pairs_on_exchanges": {
+    "pairs_exchanges": {
         "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
         "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
         "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
@@ -82,8 +84,8 @@ curl -X GET https://api.chainrider.io/v1/finance/info \
         "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
         "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
     },
-    "valid_intervals_twap": [1, 5, 10, 15, 30, 60],
-    "max_intervals_by_interval": {"1": 720, "5": 144, "10": 72,
+    "intervals_twap": [1, 5, 10, 15, 30, 60],
+    "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
      "15": 48, "30": 24, "60": 12}
   }
 }
@@ -91,7 +93,7 @@ curl -X GET https://api.chainrider.io/v1/finance/info \
 
 ```php
 <?php
-$URL = "https://api.chainrider.io/v1/finance/info";
+$URL = "https://api.chainrider.io/v1/finance/info/";
 
 $aHTTP['http']['method']  = 'GET';
 
@@ -104,10 +106,10 @@ $response = file_get_contents($URL, false, $context);
 // Response example
 {
   "message": {
-    "valid_pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-    "valid_exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
     "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
-    "valid_exchange_pairs": {
+    "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
          "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -118,7 +120,7 @@ $response = file_get_contents($URL, false, $context);
          "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
     },
-    "valid_pairs_on_exchanges": {
+    "pairs_exchanges": {
         "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
         "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
         "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
@@ -130,8 +132,8 @@ $response = file_get_contents($URL, false, $context);
         "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
         "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
     },
-    "valid_intervals_twap": [1, 5, 10, 15, 30, 60],
-    "max_intervals_by_interval": {"1": 720, "5": 144, "10": 72,
+    "intervals_twap": [1, 5, 10, 15, 30, 60],
+    "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
      "15": 48, "30": 24, "60": 12}
   }
 }
@@ -146,7 +148,7 @@ var headers = {
 };
 
 $.ajax({
-  url: 'https://api.chainrider.io/v1/finance/info',
+  url: 'https://api.chainrider.io/v1/finance/info/',
   method: 'get',
   headers: headers,
   success: function(data) {
@@ -157,10 +159,10 @@ $.ajax({
 // Response example
 {
   "message": {
-    "valid_pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-    "valid_exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
     "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
-    "valid_exchange_pairs": {
+    "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
          "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -171,7 +173,7 @@ $.ajax({
          "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
     },
-    "valid_pairs_on_exchanges": {
+    "pairs_exchanges": {
         "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
         "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
         "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
@@ -183,8 +185,8 @@ $.ajax({
         "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
         "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
     },
-    "valid_intervals_twap": [1, 5, 10, 15, 30, 60],
-    "max_intervals_by_interval": {"1": 720, "5": 144, "10": 72,
+    "intervals_twap": [1, 5, 10, 15, 30, 60],
+    "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
      "15": 48, "30": 24, "60": 12}
   }
 }
@@ -200,18 +202,18 @@ headers = {
   'Chain-Rider' => '<TOKEN>'
 }
 
-result = RestClient.get 'https://api.chainrider.io/v1/finance/info',
-         params: {'token': <TOKEN>}, headers: headers
+result = RestClient.get 'https://api.chainrider.io/v1/finance/info/',
+         params: {}, headers: headers
 
 p JSON.parse(result)
 
 # Response example
 {
   "message": {
-    "valid_pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-    "valid_exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
     "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
-    "valid_exchange_pairs": {
+    "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
          "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -222,7 +224,7 @@ p JSON.parse(result)
          "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
     },
-    "valid_pairs_on_exchanges": {
+    "pairs_exchanges": {
         "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
         "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
         "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
@@ -234,8 +236,8 @@ p JSON.parse(result)
         "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
         "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
     },
-    "valid_intervals_twap": [1, 5, 10, 15, 30, 60],
-    "max_intervals_by_interval": {"1": 720, "5": 144, "10": 72,
+    "intervals_twap": [1, 5, 10, 15, 30, 60],
+    "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
      "15": 48, "30": 24, "60": 12}
   }
 }
@@ -250,18 +252,18 @@ headers = {
   'Chain-Rider': '<TOKEN>'
 }
 
-r = requests.get('https://api.chainrider.io/v1/finance/info',
-                  params={'token': <TOKEN>}, headers = headers)
+r = requests.get('https://api.chainrider.io/v1/finance/info/',
+                  params={}, headers = headers)
 
 print r.json()
 
 # Response example
 {
   "message": {
-    "valid_pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-    "valid_exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
     "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
-    "valid_exchange_pairs": {
+    "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
          "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -272,7 +274,7 @@ print r.json()
          "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
     },
-    "valid_pairs_on_exchanges": {
+    "pairs_exchanges": {
         "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
         "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
         "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
@@ -284,15 +286,15 @@ print r.json()
         "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
         "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
     },
-    "valid_intervals_twap": [1, 5, 10, 15, 30, 60],
-    "max_intervals_by_interval": {"1": 720, "5": 144, "10": 72,
+    "intervals_twap": [1, 5, 10, 15, 30, 60],
+    "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
      "15": 48, "30": 24, "60": 12}
   }
 }
 ```
 
 ```java
-URL obj = new URL("https://api.chainrider.io/v1/finance/info");
+URL obj = new URL("https://api.chainrider.io/v1/finance/info/");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestProperty("Accept", "application/json");
 con.setRequestProperty("Content-Type", "application/json");
@@ -312,10 +314,10 @@ System.out.println(response.toString());
 // Response example
 {
   "message": {
-    "valid_pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-    "valid_exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
     "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
-    "valid_exchange_pairs": {
+    "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
          "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -326,7 +328,7 @@ System.out.println(response.toString());
          "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
     },
-    "valid_pairs_on_exchanges": {
+    "pairs_exchanges": {
         "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
         "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
         "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
@@ -338,8 +340,8 @@ System.out.println(response.toString());
         "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
         "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
     },
-    "valid_intervals_twap": [1, 5, 10, 15, 30, 60],
-    "max_intervals_by_interval": {"1": 720, "5": 144, "10": 72,
+    "intervals_twap": [1, 5, 10, 15, 30, 60],
+    "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
      "15": 48, "30": 24, "60": 12}
   }
 }

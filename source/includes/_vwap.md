@@ -114,7 +114,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/finance/vwap/realtime/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -293,7 +293,7 @@ headers = {
 }
 
 r = requests.post('https://api.chainrider.io/v1/finance/vwap/historic/',
-                  data=<body_here>, params={}, headers = headers)
+                  json=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
