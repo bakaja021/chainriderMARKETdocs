@@ -7,6 +7,18 @@ ChainRider supports the following pairs:
 * `ETCUSD`
 * `LTCUSD`
 * `DASHUSD`
+* `BCHUSD`
+* `BTGUSD`
+* `OMGUSD`
+* `EOSUSD` 
+* `TRXUSD`
+* `XMRUSD`
+* `VETUSD`
+* `IOTAUSD`
+* `ZECUSD`
+* `TUSDUSD`
+* `NEOUSD`
+* `ADAUSD`
 
 ChainRider supports the following exchanges:
 
@@ -58,35 +70,60 @@ curl -X GET https://api.chainrider.io/v1/finance/info/ \
 # Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-    "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
+                  "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
     "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi",
-         "Kraken", "Poloniex"],
-        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],
+        "OMGUSD": ["HitBTC"],
+        "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
+                   "Kucoin", "Poloniex"],
+        "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "XMRUSD": ["Bitfinex", "HitBTC", "Kraken", "Poloniex"],
+        "VETUSD": ["Binance", "Bitfinex", "Huobi", "Kucoin"],
+        "IOTAUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi"],
+        "ZECUSD": ["Bitfinex", "Gemini", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "TUSDUSD": ["Binance"],
+        "NEOUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "ADAUSD": ["Binance", "HitBTC", "Huobi", "Kraken"]
     },
     "pairs_exchanges": {
-        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Gemini": ["BTCUSD", "ETHUSD"],
-        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
+        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                    "TRXUSD", "VETUSD", "IOTAUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
+        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                     "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD", "IOTAUSD",
+                     "ZECUSD", "NEOUSD"],
+        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD", "BCHUSD"],
+        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
+        "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
+        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "ZECUSD", "NEOUSD"],
+        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
+                  "ADAUSD"],
+        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "EOSUSD", "XMRUSD", "ZECUSD", "NEOUSD", "ADAUSD"],
+        "Kucoin": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                   "TRXUSD", "VETUSD", "IOTAUSD", "NEOUSD", "ADAUSD"],
+        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD",
+                     "BCHUSD", "EOSUSD", "XMRUSD", "ZECUSD"]
     },
     "intervals_twap": [1, 5, 10, 15, 30, 60],
     "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
-     "15": 48, "30": 24, "60": 12}
+                           "15": 48, "30": 24, "60": 12}
   }
 }
 ```
@@ -106,35 +143,60 @@ $response = file_get_contents($URL, false, $context);
 // Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-    "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
+                  "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
     "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi",
-         "Kraken", "Poloniex"],
-        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],
+        "OMGUSD": ["HitBTC"],
+        "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
+                   "Kucoin", "Poloniex"],
+        "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "XMRUSD": ["Bitfinex", "HitBTC", "Kraken", "Poloniex"],
+        "VETUSD": ["Binance", "Bitfinex", "Huobi", "Kucoin"],
+        "IOTAUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi"],
+        "ZECUSD": ["Bitfinex", "Gemini", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "TUSDUSD": ["Binance"],
+        "NEOUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "ADAUSD": ["Binance", "HitBTC", "Huobi", "Kraken"]
     },
     "pairs_exchanges": {
-        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Gemini": ["BTCUSD", "ETHUSD"],
-        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
+        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                    "TRXUSD", "VETUSD", "IOTAUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
+        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                     "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD", "IOTAUSD",
+                     "ZECUSD", "NEOUSD"],
+        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD", "BCHUSD"],
+        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
+        "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
+        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "ZECUSD", "NEOUSD"],
+        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
+                  "ADAUSD"],
+        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "EOSUSD", "XMRUSD", "ZECUSD", "NEOUSD", "ADAUSD"],
+        "Kucoin": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                   "TRXUSD", "VETUSD", "IOTAUSD", "NEOUSD", "ADAUSD"],
+        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD",
+                     "BCHUSD", "EOSUSD", "XMRUSD", "ZECUSD"]
     },
     "intervals_twap": [1, 5, 10, 15, 30, 60],
     "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
-     "15": 48, "30": 24, "60": 12}
+                           "15": 48, "30": 24, "60": 12}
   }
 }
 ?>
@@ -159,35 +221,60 @@ $.ajax({
 // Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-    "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
+                  "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
     "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi",
-         "Kraken", "Poloniex"],
-        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],
+        "OMGUSD": ["HitBTC"],
+        "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
+                   "Kucoin", "Poloniex"],
+        "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "XMRUSD": ["Bitfinex", "HitBTC", "Kraken", "Poloniex"],
+        "VETUSD": ["Binance", "Bitfinex", "Huobi", "Kucoin"],
+        "IOTAUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi"],
+        "ZECUSD": ["Bitfinex", "Gemini", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "TUSDUSD": ["Binance"],
+        "NEOUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "ADAUSD": ["Binance", "HitBTC", "Huobi", "Kraken"]
     },
     "pairs_exchanges": {
-        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Gemini": ["BTCUSD", "ETHUSD"],
-        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
+        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                    "TRXUSD", "VETUSD", "IOTAUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
+        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                     "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD", "IOTAUSD",
+                     "ZECUSD", "NEOUSD"],
+        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD", "BCHUSD"],
+        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
+        "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
+        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "ZECUSD", "NEOUSD"],
+        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
+                  "ADAUSD"],
+        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "EOSUSD", "XMRUSD", "ZECUSD", "NEOUSD", "ADAUSD"],
+        "Kucoin": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                   "TRXUSD", "VETUSD", "IOTAUSD", "NEOUSD", "ADAUSD"],
+        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD",
+                     "BCHUSD", "EOSUSD", "XMRUSD", "ZECUSD"]
     },
     "intervals_twap": [1, 5, 10, 15, 30, 60],
     "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
-     "15": 48, "30": 24, "60": 12}
+                           "15": 48, "30": 24, "60": 12}
   }
 }
 ```
@@ -210,35 +297,60 @@ p JSON.parse(result)
 # Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-    "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
+                  "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
     "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi",
-         "Kraken", "Poloniex"],
-        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],
+        "OMGUSD": ["HitBTC"],
+        "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
+                   "Kucoin", "Poloniex"],
+        "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "XMRUSD": ["Bitfinex", "HitBTC", "Kraken", "Poloniex"],
+        "VETUSD": ["Binance", "Bitfinex", "Huobi", "Kucoin"],
+        "IOTAUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi"],
+        "ZECUSD": ["Bitfinex", "Gemini", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "TUSDUSD": ["Binance"],
+        "NEOUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "ADAUSD": ["Binance", "HitBTC", "Huobi", "Kraken"]
     },
     "pairs_exchanges": {
-        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Gemini": ["BTCUSD", "ETHUSD"],
-        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
+        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                    "TRXUSD", "VETUSD", "IOTAUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
+        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                     "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD", "IOTAUSD",
+                     "ZECUSD", "NEOUSD"],
+        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD", "BCHUSD"],
+        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
+        "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
+        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "ZECUSD", "NEOUSD"],
+        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
+                  "ADAUSD"],
+        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "EOSUSD", "XMRUSD", "ZECUSD", "NEOUSD", "ADAUSD"],
+        "Kucoin": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                   "TRXUSD", "VETUSD", "IOTAUSD", "NEOUSD", "ADAUSD"],
+        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD",
+                     "BCHUSD", "EOSUSD", "XMRUSD", "ZECUSD"]
     },
     "intervals_twap": [1, 5, 10, 15, 30, 60],
     "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
-     "15": 48, "30": 24, "60": 12}
+                           "15": 48, "30": 24, "60": 12}
   }
 }
 ```
@@ -260,35 +372,60 @@ print r.json()
 # Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-    "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
+                  "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
     "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi",
-         "Kraken", "Poloniex"],
-        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],
+        "OMGUSD": ["HitBTC"],
+        "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
+                   "Kucoin", "Poloniex"],
+        "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "XMRUSD": ["Bitfinex", "HitBTC", "Kraken", "Poloniex"],
+        "VETUSD": ["Binance", "Bitfinex", "Huobi", "Kucoin"],
+        "IOTAUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi"],
+        "ZECUSD": ["Bitfinex", "Gemini", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "TUSDUSD": ["Binance"],
+        "NEOUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "ADAUSD": ["Binance", "HitBTC", "Huobi", "Kraken"]
     },
     "pairs_exchanges": {
-        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Gemini": ["BTCUSD", "ETHUSD"],
-        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
+        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                    "TRXUSD", "VETUSD", "IOTAUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
+        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                     "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD", "IOTAUSD",
+                     "ZECUSD", "NEOUSD"],
+        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD", "BCHUSD"],
+        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
+        "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
+        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "ZECUSD", "NEOUSD"],
+        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
+                  "ADAUSD"],
+        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "EOSUSD", "XMRUSD", "ZECUSD", "NEOUSD", "ADAUSD"],
+        "Kucoin": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                   "TRXUSD", "VETUSD", "IOTAUSD", "NEOUSD", "ADAUSD"],
+        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD",
+                     "BCHUSD", "EOSUSD", "XMRUSD", "ZECUSD"]
     },
     "intervals_twap": [1, 5, 10, 15, 30, 60],
     "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
-     "15": 48, "30": 24, "60": 12}
+                           "15": 48, "30": 24, "60": 12}
   }
 }
 ```
@@ -314,35 +451,60 @@ System.out.println(response.toString());
 // Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-    "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex" ],
+                  "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
     "exchange_pairs": {
         "BTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "ETHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi",
-         "Kraken", "Poloniex"],
-        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
-         "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"]
+                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "ETCUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "LTCUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
+                   "Huobi", "Kraken", "Kucoin", "Poloniex"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],
+        "OMGUSD": ["HitBTC"],
+        "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
+                   "Kucoin", "Poloniex"],
+        "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "XMRUSD": ["Bitfinex", "HitBTC", "Kraken", "Poloniex"],
+        "VETUSD": ["Binance", "Bitfinex", "Huobi", "Kucoin"],
+        "IOTAUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi"],
+        "ZECUSD": ["Bitfinex", "Gemini", "HitBTC", "Huobi", "Kraken", "Poloniex"],
+        "TUSDUSD": ["Binance"],
+        "NEOUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
+        "ADAUSD": ["Binance", "HitBTC", "Huobi", "Kraken"]
     },
     "pairs_exchanges": {
-        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD"],
-        "Gemini": ["BTCUSD", "ETHUSD"],
-        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"],
-        "Kucoin": ["BTCUSD", "ETHUSD", "LTCUSD"],
-        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD"]
+        "Binance": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                    "TRXUSD", "VETUSD", "IOTAUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
+        "Bitfinex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                     "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD", "IOTAUSD",
+                     "ZECUSD", "NEOUSD"],
+        "Bitstamp": ["BTCUSD", "ETHUSD", "LTCUSD", "BCHUSD"],
+        "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
+        "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
+        "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "ZECUSD", "NEOUSD"],
+        "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
+                  "ADAUSD"],
+        "Kraken": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
+                   "EOSUSD", "XMRUSD", "ZECUSD", "NEOUSD", "ADAUSD"],
+        "Kucoin": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD", "EOSUSD",
+                   "TRXUSD", "VETUSD", "IOTAUSD", "NEOUSD", "ADAUSD"],
+        "Poloniex": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD",
+                     "BCHUSD", "EOSUSD", "XMRUSD", "ZECUSD"]
     },
     "intervals_twap": [1, 5, 10, 15, 30, 60],
     "max_intervals_twap": {"1": 720, "5": 144, "10": 72,
-     "15": 48, "30": 24, "60": 12}
+                           "15": 48, "30": 24, "60": 12}
   }
 }
 ```
