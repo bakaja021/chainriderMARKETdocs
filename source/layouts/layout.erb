@@ -36,6 +36,8 @@ under the License.
       <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
     </style>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
@@ -53,8 +55,17 @@ under the License.
       </span>
     </a>
     <div class="toc-wrapper">
+      <a href='https://www.chainrider.io/'>
       <%= image_tag "ChainRider01.png", class: 'logo' %>
-      <%= image_tag "exchange.jpg", class: 'sublogo' %>
+      </a>
+      <div class="dropdown">
+        <button class="dropbtn"><%= image_tag "exchange.jpg", class: 'sublogo' %>
+        <span class="caret" style="color: black; border-top: 7px dashed;"></span></button>
+        <div class="dropdown-content" style="line-height: 0.7;">
+          <a class="nav-choices" href='https://www.chainrider.io/docs/dash/'>Dash</a>
+          <a class="nav-choices" href='https://www.chainrider.io/docs/bitcoin/'>Bitcoin</a>
+        </div>
+      </div>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
