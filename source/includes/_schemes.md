@@ -112,6 +112,77 @@
 }
 ```
 
+<h2 id="tocWebsocketWelcomeObject">WebSocket Welcome Object</h2>
+
+<a id="schemewebsocketwelcomeobject"></a>
+
+|Name|Type|Description|
+|---|---|---|
+|message|String|Welcome message upon successful connection|
+
+> Example
+
+```json
+{
+  "message": "Welcome to ChainRider VWAP websockets"
+}
+```
+
+<h2 id="tocWebsocketVWAPObject">WebSocket VWAP Object</h2>
+
+<a id="schemewebsocketvwapobject"></a>
+
+|Name|Type|Description|
+|---|---|---|
+|message|JSON|Message object containing array of VWAP JSON objects for each specified pair in the stream.|
+|pair|String|The digital asset you requested VWAP for. See [Supported Pairs](#supported-pairs-and-exchanges)|
+|upper_unix|Integer|Upper time range in seconds. See <a href="https://www.unixtimestamp.com/" target="_blank">Unix Timestamp</a>|
+|lower_unix|Integer|Lower time range in seconds.|
+|vwap|Float|Volume weighted average price in **USD**.|
+|difference|Float|Difference between current VWAP and VWAP for the previous interval expressed in percentage. It could be positive (indicating the price has gone up for X% compared to the same interval) or negative value (indicating that the price has gone down for X% compared to the same interval). **Example** if we have requested VWAP for BTC for interval of 1h, and we receive `difference: 1.53`, it means that the price for last hour has gone up for 1.53% compared to an hour before that. In case we request VWAP for interval of 1 minute, difference will indicate compraration between the price for the last minute and one minute before that.|
+
+> Example
+
+```json
+{
+  "message": [
+      {"pair": "BTCUSD", "lower_unix": 1541066704, "upper_unix": 1541066764, "vwap": 6367.78, "difference": 0.21},
+      {"pair": "ETHUSD", "lower_unix": 1541066704, "upper_unix": 1541066764, "vwap": 198.48, "difference": 0.01},
+      {"pair": "ETCUSD", "lower_unix": 1541066704, "upper_unix": 1541066764, "vwap": 9.05, "difference": 0.11},
+      {"pair": "LTCUSD", "lower_unix": 1541066704, "upper_unix": 1541066764, "vwap": 50.02, "difference": -0.02},
+      {"pair": "DASHUSD", "lower_unix": 1541066704, "upper_unix": 1541066764, "vwap": 152.92, "difference": 0.03},
+      {"pair": "BCHUSD", "lower_unix": 1541066704, "upper_unix": 1541066764, "vwap": 425.62, "difference": 0.03},
+      {"pair": "BTGUSD", "lower_unix": 1541066704, "upper_unix": 1541066764, "vwap": 26.51, "difference": 0.0}
+  ]
+}
+```
+
+<h2 id="tocWebSocketErrorObject">WebSocket Error Object</h2>
+
+<a id="schemewebsocketerrorobject"></a>
+
+|Name|Type|Description|
+|---|---|---|
+|error|String|Error message. List of possible error messages is given in the table below.|
+
+> Example
+
+```json
+{
+  "error": "Unknown user."
+}
+```
+
+|Error|
+|---|
+|Token missing.|
+|Token invalid.|
+|Unknown user.|
+|Please activate token in order to use ChainRider websockets.|
+|You have exceeded number of possible connections. Please upgrade current plan|
+|You have unsupported pairs in request "REQUESTED_PAIRS_ARRAY"|
+
+
 <h2 id="tocVolumeExchangeObject">Volume Exchange Object</h2>
 
 <a id="schemevolumeexchangeobject"></a>
@@ -238,7 +309,7 @@
 ```json
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
               "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",

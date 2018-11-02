@@ -18,6 +18,7 @@ includes:
   - vwap
   - twap
   - volume
+  - websocketapi
   - supportedExchangesAndPairs
   - schemes
   - errors

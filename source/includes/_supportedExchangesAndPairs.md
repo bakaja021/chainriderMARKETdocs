@@ -1,6 +1,6 @@
 # Supported Pairs and Exchanges
 
-ChainRider supports the following pairs:
+### Supported pairs
 
 * `BTCUSD`
 * `ETHUSD`
@@ -10,7 +10,7 @@ ChainRider supports the following pairs:
 * `BCHUSD`
 * `BTGUSD`
 * `OMGUSD`
-* `EOSUSD` 
+* `EOSUSD`
 * `TRXUSD`
 * `XMRUSD`
 * `VETUSD`
@@ -20,7 +20,7 @@ ChainRider supports the following pairs:
 * `NEOUSD`
 * `ADAUSD`
 
-ChainRider supports the following exchanges:
+### Supported exchanges
 
 * `Binance`
 * `Bitfinex`
@@ -32,6 +32,19 @@ ChainRider supports the following exchanges:
 * `Kraken`
 * `Kucoin`
 * `Poloniex`
+
+### Supported websocket intervals
+
+|Interval|Description|
+|---|---|
+|1m|Provides Moving VWAP for last 60 seconds|
+|5m|Provides Moving VWAP for last 5 minutes|
+|10m|Provides Moving VWAP for last 10 minutes|
+|30m|Provides Moving VWAP for last 30 minutes|
+|1h|Provides Moving VWAP for last hour|
+|6h|Provides Moving VWAP for last 6 hours|
+|12h|Provides Moving VWAP for last 12 hours|
+|24h|Provides Moving VWAP for last 24 hours|
 
 <a id="divider"></a>
 
@@ -70,7 +83,7 @@ curl -X GET https://api.chainrider.io/v1/finance/info/ \
 # Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
               "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -143,7 +156,7 @@ $response = file_get_contents($URL, false, $context);
 // Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
               "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -221,7 +234,7 @@ $.ajax({
 // Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
               "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -297,7 +310,7 @@ p JSON.parse(result)
 # Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
               "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -372,7 +385,7 @@ print r.json()
 # Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
               "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
@@ -451,7 +464,7 @@ System.out.println(response.toString());
 // Response example
 {
   "message": {
-    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD", 
+    "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
               "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
