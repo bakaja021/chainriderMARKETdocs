@@ -9,7 +9,6 @@
 * `DASHUSD`
 * `BCHUSD`
 * `BTGUSD`
-* `OMGUSD`
 * `EOSUSD`
 * `TRXUSD`
 * `XMRUSD`
@@ -84,7 +83,7 @@ curl -X GET https://api.chainrider.io/v1/finance/info/ \
 {
   "message": {
     "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
@@ -100,7 +99,6 @@ curl -X GET https://api.chainrider.io/v1/finance/info/ \
         "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
                    "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "BTGUSD": ["Bitfinex", "HitBTC"],
-        "OMGUSD": ["HitBTC"],
         "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
                    "Kucoin", "Poloniex"],
         "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
@@ -122,7 +120,7 @@ curl -X GET https://api.chainrider.io/v1/finance/info/ \
         "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
         "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
         "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "BTGUSD",  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
                    "ZECUSD", "NEOUSD"],
         "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
                   "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
@@ -157,7 +155,7 @@ $response = file_get_contents($URL, false, $context);
 {
   "message": {
     "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
@@ -172,8 +170,7 @@ $response = file_get_contents($URL, false, $context);
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
         "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
                    "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "BTGUSD": ["Bitfinex", "HitBTC"],
-        "OMGUSD": ["HitBTC"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],     
         "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
                    "Kucoin", "Poloniex"],
         "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
@@ -195,7 +192,7 @@ $response = file_get_contents($URL, false, $context);
         "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
         "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
         "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "BTGUSD",  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
                    "ZECUSD", "NEOUSD"],
         "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
                   "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
@@ -235,7 +232,7 @@ $.ajax({
 {
   "message": {
     "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
@@ -250,8 +247,7 @@ $.ajax({
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
         "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
                    "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "BTGUSD": ["Bitfinex", "HitBTC"],
-        "OMGUSD": ["HitBTC"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],        
         "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
                    "Kucoin", "Poloniex"],
         "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
@@ -273,7 +269,7 @@ $.ajax({
         "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
         "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
         "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "BTGUSD",  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
                    "ZECUSD", "NEOUSD"],
         "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
                   "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
@@ -311,7 +307,7 @@ p JSON.parse(result)
 {
   "message": {
     "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
@@ -326,8 +322,7 @@ p JSON.parse(result)
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
         "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
                    "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "BTGUSD": ["Bitfinex", "HitBTC"],
-        "OMGUSD": ["HitBTC"],
+        "BTGUSD": ["Bitfinex", "HitBTC"]
         "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
                    "Kucoin", "Poloniex"],
         "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
@@ -349,7 +344,7 @@ p JSON.parse(result)
         "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
         "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
         "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "BTGUSD",  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
                    "ZECUSD", "NEOUSD"],
         "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
                   "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
@@ -386,7 +381,7 @@ print r.json()
 {
   "message": {
     "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
@@ -401,8 +396,7 @@ print r.json()
         "DASHUSD": ["Bitfinex", "HitBTC", "Huobi", "Kraken", "Poloniex"],
         "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
                    "Huobi", "Kraken", "Kucoin", "Poloniex"],
-        "BTGUSD": ["Bitfinex", "HitBTC"],
-        "OMGUSD": ["HitBTC"],
+        "BTGUSD": ["Bitfinex", "HitBTC"],       
         "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
                    "Kucoin", "Poloniex"],
         "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
@@ -424,7 +418,7 @@ print r.json()
         "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
         "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
         "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "BTGUSD",  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
                    "ZECUSD", "NEOUSD"],
         "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
                   "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
@@ -465,7 +459,7 @@ System.out.println(response.toString());
 {
   "message": {
     "pairs": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-              "BTGUSD", "OMGUSD","EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
+              "BTGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "VETUSD",
               "IOTAUSD", "ZECUSD", "TUSDUSD", "NEOUSD", "ADAUSD"],
     "exchanges": ["Binance", "Bitfinex", "Bitstamp", "Coinbase",
                   "Gemini", "HitBTC", "Huobi", "Kraken", "Kucoin", "Poloniex"],
@@ -481,7 +475,6 @@ System.out.println(response.toString());
         "BCHUSD": ["Binance", "Bitfinex", "Bitstamp", "Coinbase", "HitBTC",
                    "Huobi", "Kraken", "Kucoin", "Poloniex"],
         "BTGUSD": ["Bitfinex", "HitBTC"],
-        "OMGUSD": ["HitBTC"],
         "EOSUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kraken",
                    "Kucoin", "Poloniex"],
         "TRXUSD": ["Binance", "Bitfinex", "HitBTC", "Huobi", "Kucoin"],
@@ -503,7 +496,7 @@ System.out.println(response.toString());
         "Coinbase": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "BCHUSD"],
         "Gemini": ["BTCUSD", "ETHUSD", "ZECUSD"],
         "HitBTC": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
-                   "BTGUSD", "OMGUSD", "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
+                   "BTGUSD",  "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD",
                    "ZECUSD", "NEOUSD"],
         "Huobi": ["BTCUSD", "ETHUSD", "ETCUSD", "LTCUSD", "DASHUSD", "BCHUSD",
                   "EOSUSD", "TRXUSD", "XMRUSD", "IOTAUSD", "ZECUSD", "NEOUSD",
