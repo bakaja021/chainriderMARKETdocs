@@ -3,7 +3,7 @@
 ChainRider provides option for streaming real time information about **Moving VWAP** via web sockets. Websockets are commonly used for client side applications for instant update of mobile or web UI displaying real time crypto currency price charts.
 
 The base URL for accessing websocket APIs is: `wss://websocketapi.chainrider.io/ws/private/vwap/`
-In a single connection, you can specify one or more [supported pairs](#supported-pairs) and exactly one [supported interval](#supported-websocket-intervals) to receive real time updates on moving VWAP. Regardless of the interval specified, you will receive updates every 10s.
+In a single connection, you can specify one or more [supported pairs](#supported-pairs) and exactly one [supported interval](#supported-websocket-intervals) to receive real time updates on moving VWAP. Regardless of the interval specified, you will receive updates every 30s.
 
 ## WebSocket Moving VWAP
 
@@ -251,13 +251,13 @@ Let's say that we need BTC price real time updates for last hour. In order to ac
 
 `wss://websocketapi.chainrider.io/ws/private/vwap/?pairs=BTCUSD&interval=1h&token=<YOUR_CHAINRIDER_TOKEN>`
 
-When the connection with ChainRider websocket server is established, we will receive BTC price (Moving VWAP) for the last hour every 10 seconds.
+When the connection with ChainRider websocket server is established, we will receive BTC price (Moving VWAP) for the last hour every 30 seconds.
 
 Let's look at another example where we want to receive updates for more than one pair (i.e. BTC, DASH and ETH) for an interval of last 10 minutes. In that case, our final websocket URI would be:
 
 `wss://websocketapi.chainrider.io/ws/private/vwap/?pairs=BTCUSD/DASHUSD/ETHUSD&interval=10m&token=<YOUR_CHAINRIDER_TOKEN>`
 
-Again, we will receive updates every 10s but the provided results would be VWAP price of BTC, DASH and ETH for last 10 minutes.
+Again, we will receive updates every 30s but the provided results would be VWAP price of BTC, DASH and ETH for last 10 minutes.
 
 
 <a id="divider"></a>
